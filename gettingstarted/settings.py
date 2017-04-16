@@ -78,10 +78,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'football',
-        'USER': 'root',
-        'PASSWORD': 'minjar',
-        'HOST': 'localhost',
+        'NAME': 'd2ijua4ir5j30r',
+        'USER': 'wsprqvwmrtpouw',
+        'PASSWORD': 'cd8c2ca512d71566f7b6afcb8f8e895f47fc8a730b749367fd3b8372df9f2932',
+        'HOST': 'ec2-54-225-182-108.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
