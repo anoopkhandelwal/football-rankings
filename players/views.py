@@ -25,7 +25,7 @@ def status2API(request):
 class PlayersInfoHtml(APIView):
 
     def get(self, request):
-        response = OrderedDict()
+        response = {}
         error_message = None
         try:
             response['data'] = {}
@@ -49,7 +49,7 @@ class PlayersInfoHtml(APIView):
 class PlayersInfo(APIView):
 
     def get(self, request):
-        response = OrderedDict()
+        response = {}
         status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
         try:
             response['data'] = {}
@@ -74,7 +74,7 @@ class PlayersInfo(APIView):
 
 class PlayerInfo(APIView):
     def get(self, request , name):
-        response = OrderedDict()
+        response = {}
         status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
         try:
             response['data'] = {}
@@ -95,7 +95,7 @@ class PlayerInfo(APIView):
 
 class PlayerInfoHtml(APIView):
     def get(self, request , name):
-        response = OrderedDict()
+        response = {}
         error_message = None
         try:
             player_record = Player.objects.get(Name=name)
@@ -144,7 +144,7 @@ class PlayerInfoHtml(APIView):
 class PlayersFilteredInfoHtml(APIView):
 
     def get(self, request , filter_key):
-        response = OrderedDict()
+        response = {}
         error_message = None
         try:
             response['data'] = {}
@@ -168,7 +168,7 @@ class PlayersFilteredInfoHtml(APIView):
 class SearchInfoHtml(APIView):
 
         def get(self, request, search_key):
-            response = OrderedDict()
+            response = {}
             error_message = None
             try:
                 response['data'] = {}
