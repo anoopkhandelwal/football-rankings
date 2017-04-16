@@ -34,7 +34,8 @@ class PlayerResponseScheduleSerializer(serializers.Serializer):
     def to_representation(self, instance):
         data_dict = super(PlayerResponseScheduleSerializer, self).to_representation(instance)
         response_dict = {}
-        for key,value in data_dict.iteritems():
+        for key in data_dict.keys():
+            value = data_dict[key]
             if value == None or value=="":
                 value = "N/A"
             response_dict[key] = value
@@ -47,7 +48,8 @@ class ClubPlayersSerializers(serializers.Serializer):
     def to_representation(self, instance):
         data_dict = super(ClubPlayersSerializers, self).to_representation(instance)
         response_dict = {}
-        for key, value in data_dict.iteritems():
+        for key in data_dict.keys():
+            value = data_dict[key]
             if value == None or value == "":
                 value = "N/A"
             response_dict[key] = value
