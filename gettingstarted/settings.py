@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's#pr&$-+*ujw$^s)_%2!6dc@83uc=r5%7na!*t)5s32ldn7i@q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -73,15 +73,16 @@ WSGI_APPLICATION = 'gettingstarted.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'football',
         'USER': 'root',
         'PASSWORD': 'minjar',
         'HOST': 'localhost',
-        'PORT': '3306'
+        'PORT': '5432'
     }
 }
 
