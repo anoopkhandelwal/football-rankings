@@ -1,4 +1,5 @@
-# python-getting-started
+# football-rankings
+Visit [heroku app](https://lit-refuge-87881.herokuapp.com/players/) for more..
 
 A barebones Python app, which can easily be deployed to Heroku.
 
