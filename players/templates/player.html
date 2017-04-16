@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% with response.player as player %}
+
+        {% if player %}
+            <div>
+                <div style="float:left;margin-right: 20px;">
+                    {% with response.icon as icon %}
+                        <img src="{{ icon }}" style="width: 400px; height: 300px;"/>
+                    {% endwith %}
+                </div>
+
+                <div class="">
+
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th data-field="key" class="key col-md-2"></th>
+                                <th data-field="value" class="col-md-4"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <th data-field="key" class="key">Name:</th>
+                                <th data-field="value">{{ player.Name }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Age:</th>
+                                <th data-field="value">{{ player.Age }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Nationality:</th>
+                                <th data-field="value">{{ player.Nationality }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Clubs:</th>
+                                <th data-field="value">{{ player.Club }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Rating:</th>
+                                <th data-field="value">{{ player.Rating }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Height:</th>
+                                <th data-field="value">{{ player.Height }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Weight:</th>
+                                <th data-field="value">{{ player.Weight }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Main Foot:</th>
+                                <th data-field="value">{{ player.Preffered_Foot }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Aggression:</th>
+                                <th data-field="value">{{ player.Aggression }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Accuracy:</th>
+                                <th data-field="value">{{ player.Freekick_Accuracy }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Speed:</th>
+                                <th data-field="value">{{ player.Speed }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Jumping:</th>
+                                <th data-field="value">{{ player.Jumping }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Power:</th>
+                                <th data-field="value">{{ player.Shot_Power }}</th>
+                            </tr>
+
+                            <tr>
+                                <th data-field="key" class="key">Agility:</th>
+                                <th data-field="value">{{ player.Agility }}</th>
+                            </tr>
+
+
+
+
+                        </tbody>
+
+                    </table>
+                </div>
+        {% else %}
+            <p>No player with this name is available.</p>
+        {% endif %}
+            </div>
+            <br/>
+            <br/>
+    {% endwith %}
+
+
+    {% with response.clubs as players %}
+            <div class="col-md-7" style="padding-top: 50px;">
+                {% if players %}
+                    <div>
+                        <h2>
+                            See also ..
+                        </h2>
+                    </div>
+                    <ul class="list-group">
+                        {% for player in players %}
+                            <li class="list-group-item">
+                                <a href="/player/{{ player.Name }}/">{{ player.Name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                {% else %}
+                    <p>No other player of {{ clubName }} Club is found!.</p>
+                {% endif %}
+            </div>
+    {% endwith %}
+
+    {% if error %}
+            <div class="alert-danger">{{ error }}</div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if players.data %}
+            <div class="table-responsive">
+                <table class="table product-table">
+                    <!--Table head-->
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Nationality</th>
+                            <th>Position</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for player in players.data %}
+                            <tr>
+                                <th scope="row">
+                                    <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                                </th>
+                                <td>
+                                    <h5><strong><a href="/player/{{ player.Name }}/">{{ player.Name }}</a></strong></h5>
+                                </td>
+                                <td>{{ player.Nationality }}</td>
+                                <td>{{ player.Position }}</td>
+                                <td>{{ player.Age }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+    {% else %}
+        {% if error %}
+            <div class="alert-danger">{{ error }}</div>
+        {% else %}
+            <p>No players are available.</p>
+        {% endif %}
+    {% endif %}
+
+
+
+{% endblock %}

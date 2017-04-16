@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FootBall Arena</title>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script language="JavaScript">
+            function searchPlayers() {
+                name = document.getElementById('sBox').value;
+                console.log("Name "+ name);
+            window.location = 'http://localhost:8000/search/'+name;
+            }
+    </script>
+
+</head>
+<body background="https://cdn.shutterstock.com/shutterstock/videos/12698327/thumb/1.jpg">
+        <div class="container">
+
+            <div class = "panel-heading col-sm-12">
+
+                <div class="col-sm-3">
+                    <a href="/players/" class="btn btn-primary cursor-pointer">
+                        FootBall Arena
+                    </a>
+                </div>
+
+
+                <div class="">
+                    <div class="col-sm-4 col-sm-offset-3">
+                        <div id="imaginary_container">
+                            <div class="input-group stylish-input-group">
+                                <input type="text" class="form-control"  placeholder="Search" name="searchBox" id="sBox">
+                                <span class="input-group-addon">
+                                    <button type="submit" onclick="searchPlayers()">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+	            </div>
+
+                <div class="col-sm-2">
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter By
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/filters/Nationality/">Nationality</a>
+                        <a class="dropdown-item" href="/filters/Club/">Clubs</a>
+                        <a class="dropdown-item" href="/filters/Rating/">Ratings</a>
+                        <a class="dropdown-item" href="/filters/National_Position/">Position</a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="panel panel-default">
+            <div class="panel-body" style="padding-top: 80px;">
+                {% block content %}
+                {% endblock %}
+            </div>
+          </div>
+
+        </div>
+
+</body>
+</html>
