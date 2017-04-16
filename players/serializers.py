@@ -8,7 +8,8 @@ class PlayersResponseScheduleSerializer(serializers.Serializer):
     def to_representation(self, instance):
         data_dict = super(PlayersResponseScheduleSerializer, self).to_representation(instance)
         response_dict = {}
-        for key, value in data_dict.iteritems():
+        for key, value in data_dict.keys():
+            value = data_dict[key]
             if value == None or value == "":
                 value = "N/A"
             response_dict[key] = value
