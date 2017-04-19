@@ -1,6 +1,8 @@
 # football-rankings
 Visit [heroku app](https://lit-refuge-87881.herokuapp.com/players/) for more..
 
+Implementation consists of django , mysql,css,javascript,html and is deployed on a heroku container.
+
 A barebones Python app, which can easily be deployed to Heroku.
 
 This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
